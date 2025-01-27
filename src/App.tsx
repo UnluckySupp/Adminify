@@ -4,6 +4,7 @@ import { Navbar } from "./components/Navbar";
 import Home from "./pages/Home/Home";
 import { LayoutContainer } from "./styled-components";
 import store from "./redux/store";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <LayoutContainer>
         <Home />
       </LayoutContainer>
+      <Footer />
     </Provider>
   );
 }

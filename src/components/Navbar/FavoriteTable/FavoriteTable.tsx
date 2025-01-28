@@ -1,7 +1,7 @@
 import { Person } from "@/models";
 import { removeFavorite } from "@/redux/states";
 import { AppStore } from "@/redux/store";
-import { Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { GridRenderCellParams, DataGrid } from "@mui/x-data-grid";
 import { useDispatch, useSelector } from "react-redux";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
@@ -20,15 +20,29 @@ const FavoriteTable: React.FC = () => {
     {
       field: "actions",
       headerName: "",
-      type: "actions",
-      sortable: "false",
+      sortable: false,
       width: 50,
       renderCell: (params: GridRenderCellParams) => (
         <>
           {
-            <Button onClick={() => handleClick(params.row)}>
-              <DeleteOutlineIcon />
-            </Button>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100%",
+              }}
+            >
+              <Button
+                sx={{
+                  padding: "2px",
+                  minwidth: "20px",
+                }}
+                onClick={() => handleClick(params.row)}
+              >
+                <DeleteOutlineIcon />
+              </Button>
+            </Box>
           }
         </>
       ),

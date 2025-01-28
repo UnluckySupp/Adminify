@@ -33,8 +33,7 @@ const PeopleTable: React.FC = () => {
     {
       field: "actions",
       headerName: "",
-      type: "actions",
-      sortable: "false",
+      sortable: false,
       width: 50,
       renderCell: (params: GridRenderCellParams) => (
         <>

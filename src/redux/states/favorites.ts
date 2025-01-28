@@ -9,7 +9,7 @@ export const favoritesSlice = createSlice({
 name: LocalStorageTypes.FAVORITES,
 initialState: getLocalStorage(LocalStorageTypes.FAVORITES) ? JSON.parse(getLocalStorage(LocalStorageTypes.FAVORITES) as string) : initialState,
 reducers: {
- addFavorite: (state,action) => {
+ addFavorite: (_state,action) => {
     setLocalStorage(LocalStorageTypes.FAVORITES, action.payload)
     return action.payload;
  },
